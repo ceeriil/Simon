@@ -5,7 +5,7 @@ import Image from "next/image";
 export const SectionHero = () => {
   return (
     <section>
-      <div className="container mx-auto flex items-center flex-col min-h-[80vh] uppercase justify-center relative">
+      <div className="container mx-auto flex items-center flex-col min-h-[1100px] uppercase justify-center relative overflow-hidden">
         <div className="absolute top-0">
           <Image
             src="/img/ceeriil.png"
