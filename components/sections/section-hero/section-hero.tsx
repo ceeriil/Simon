@@ -15,11 +15,11 @@ export const SectionHero = () => {
           />
         </div>
         <div className="border border-dashed border-[#4AFFA4] px-4 text-center py-10 max-w-[40rem] bg-[#4AFFA417] z-10">
-          <p className="text-2xl">
+          <h2 className="text-2xl">
             {" "}
             Creative front-end developer Building beautiful experiences for web
             3
-          </p>
+          </h2>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import Image from "next/image";
 export const SectionAbout = () => {
   return (
     <section>
-      <div className="container mx-auto grid grid-cols-[30%,70%] py-32 px-16 gap-5">
+      <div className="container mx-auto grid grid-cols-[30%,70%] py-32 px-16 gap-5 md:pb-[16rem]">
         <div>
           <Image
             src="/img/ceeriil.svg"

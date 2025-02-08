@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Jura, DM_Sans } from "next/font/google";
 import "../styles/globals.scss";
 import localFont from "next/font/local";
 import SmoothScrolling from "@/components/utils/smooth-scrolling/smooth-scrolling";
 
-const Jura = localFont({
-  src: [
-    {
-      path: "./fonts/Jura-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+const jura = Jura({
+  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -26,10 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-                            <SmoothScrolling>
-                            <body className={Jura.className}>{children}</body>
-
-</SmoothScrolling>
+      <SmoothScrolling>
+        <body className={jura.className}>{children}</body>
+      </SmoothScrolling>
     </html>
   );
 }
