@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Jura, DM_Sans } from "next/font/google";
+import { Jura } from "next/font/google";
 import "../styles/globals.scss";
-import localFont from "next/font/local";
 import SmoothScrolling from "@/components/utils/smooth-scrolling/smooth-scrolling";
 
 const jura = Jura({

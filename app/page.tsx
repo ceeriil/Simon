@@ -4,6 +4,8 @@ import { Header } from "@/components/layout/header/header";
 import { SectionHero } from "@/components/sections/section-hero/section-hero";
 import { SectionAbout } from "@/components/sections/section-about/section-about";
 import { SectionRecent } from "@/components/sections/section-recent/section-recent";
+import { SectionTool } from "@/components/sections/section-tool/section-tool";
+import { SectionGetStarted } from "@/components/sections/section-get-started/section-get-started";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <SectionHero />
       <SectionAbout />
       <SectionRecent />
+      <SectionTool />
+      <SectionGetStarted />
     </>
   );
 }

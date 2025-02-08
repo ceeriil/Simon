@@ -1,11 +1,19 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 export const SectionRecent = () => {
   return (
     <section className="border-t ">
-      <div className="flex flex-col container mx-auto py-16 ">
+      <div className="container mx-auto">
+        <h2 className="bg-white py-1 px-4 uppercase text-xl translate-y-[-50%] text-black inline-block tracking-[0.4rem] font-medium">
+          Recent Projects
+        </h2>
+      </div>
+
+      <div className="flex flex-col container mx-auto py-5 ">
         {/*  */}
+
         <div className="grid lg:grid-cols-[45%,50%] gap-[5rem] py-16 items-center">
           <Image src={"/img/card.svg"} alt="card" width={653} height={338} />
           <div>
@@ -22,9 +30,12 @@ export const SectionRecent = () => {
               cutting-edge UI/UX principles. Let’s build the future, one pixel
               at a time.
             </p>
-            <button className="border-[#4AFFA4] text-[#4AFFA4] py-2.5 px-6 border-2 mt-4 uppercase text-sm">
+            <Link
+              href={"/projects"}
+              className="border-[#4AFFA4] text-[#4AFFA4] py-2.5 px-6 border-2 mt-4 uppercase text-sm inline-block"
+            >
               View Project
-            </button>
+            </Link>
           </div>
         </div>
         {/*  */}
