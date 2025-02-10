@@ -8,6 +8,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --ui-notch-amount: 0.2rem;
+  --ui-notch-hypotenuse: 12.627416px; /* hypothenuse of --ui-notch-amount */
+  --ui-notch-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--ui-notch-amount) + 2px)
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +41,7 @@ p {
   line-height: 1.6;
 }
 
+/* @component: splash */
 .splash {
   background-image: url("/img/bg-temp.svg"),
     linear-gradient(90deg, #ffffff10 1px, transparent 1px),
@@ -41,6 +49,78 @@ p {
   background-repeat: no-repeat, repeat, repeat;
   background-size: cover, 4% 100%;
   background-position: center, 0%, 0%;
+}
+
+/* @component: button */
+.button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: 0.045em;
+  padding: 0.45rem;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  margin-top: 3rem;
+}
+
+.button__content {
+  display: inline-block;
+  z-index: 2;
+}
+
+.button--size-lg,
+.button--size-xl {
+  border-width: 2px;
+  clip-path: var(--ui-notch-path);
+  padding: 0.55rem 0.7rem 0.7rem 0.55rem;
+}
+
+.button--size-lg::before,
+.button--size-xl::before {
+  background-color: currentcolor;
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  right: -6px;
+  top: auto;
+  transform: rotate(-45deg);
+  width: var(--ui-notch-hypotenuse);
+  z-index: 100;
+}
+
+.button--size-xl {
+  padding: 0.55rem 1.5rem 1.5rem 0.55rem;
+}
+
+.button--primary {
+  color: var(--colors-secondary--500);
+  border-color: var(--colors-secondary--500);
+}
+
+.btn-primary {
+  border-width: 2px;
+  clip-path: var(--ui-notch-path);
+  padding: 0.55rem 0.7rem 0.7rem 0.55rem;
+}
+
+.btn-primary::before {
+  background-color: currentcolor;
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 3px; /* bigger to compensate transform */
+  position: absolute;
+  right: -6px;
+  top: auto;
+  transform: rotate(-45deg);
+  width: var(--ui-notch-hypotenuse);
+  z-index: 100;
 }
 
 @layer utilities {
