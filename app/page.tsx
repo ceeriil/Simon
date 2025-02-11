@@ -1,20 +1,22 @@
-import Image from "next/image";
-import { SplashScreen } from "@/components/layout/splash-screen/splash-screen";
-import { Header } from "@/components/layout/header/header";
-import { SectionHero } from "@/components/sections/section-hero/section-hero";
-import { SectionAbout } from "@/components/sections/section-about/section-about";
-import { SectionRecent } from "@/components/sections/section-recent/section-recent";
-import { SectionTool } from "@/components/sections/section-tool/section-tool";
-import { SectionGetStarted } from "@/components/sections/section-get-started/section-get-started";
+import {
+  Header,
+  SectionAbout,
+  SectionTools,
+  SectionGetStarted,
+  SectionHero,
+  SectionRecent,
+} from "@/components";
+import { Menu } from "@/components/layout/Menu";
 
 export default function Home() {
   return (
     <>
+      <Menu />
       <Header />
       <SectionHero />
       <SectionAbout />
       <SectionRecent />
-      <SectionTool />
+      <SectionTools />
       <SectionGetStarted />
     </>
   );
