@@ -1,6 +1,17 @@
 import React from "react";
+import { IProject } from "@/data/projects";
 
-export const SectionProjectAwards = () => {
+interface ISectionProjectAwardsProps {
+  projects: IProject;
+}
+
+export const SectionProjectAwards: React.FC<ISectionProjectAwardsProps> = ({
+  projects,
+}) => {
+  if (!projects.awards || projects.awards.length <= 0) {
+    return <></>;
+  }
+
   return (
     <section>
       <div className="container mx-auto border-t border-l border-r border-[#ffffff90]">
@@ -11,9 +22,14 @@ export const SectionProjectAwards = () => {
 
       <div className="py-8 border-l border-r border-[#ffffff90] container mx-auto pb-32">
         <div className=" grid mx-auto gap-2">
-          <div className="border-[#727171] border-l-0 border-r-0 border uppercase tracking-[0.35rem] text-xl text-white py-5 px-3 bg-[#1A1A1A] text-center">
-            Chainlink Summer Hackhathon 2023
-          </div>
+          {projects.awards.map((award) => (
+            <div
+              className="border-[#727171] border-l-0 border-r-0 border uppercase tracking-[0.35rem] text-xl text-white py-5 px-3 bg-[#1A1A1A] text-center"
+              key={award.name}
+            >
+              {award.name}
+            </div>
+          ))}
         </div>
       </div>
     </section>

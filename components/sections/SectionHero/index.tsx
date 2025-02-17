@@ -11,8 +11,8 @@ export const SectionHero = () => {
           <SocialBlock />
         </div>
 
-        <div className="absolute bottom-6 right-4 text-[#FFA10B]">
-          <span>Scroll down</span>
+        <div className="absolute top-[80vh] right-4 text-[#FFA10B] flex space-x-2 items-center">
+          <span className="mr-2">Scroll down</span>
           <ScrollDownIcon />
         </div>
 

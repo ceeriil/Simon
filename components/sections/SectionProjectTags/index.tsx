@@ -1,6 +1,17 @@
 import React from "react";
+import { IProject } from "@/data/projects";
 
-export const SectionProjectTags = () => {
+interface ISectionProjectTagsProps {
+  projects: IProject;
+}
+
+export const SectionProjectTags: React.FC<ISectionProjectTagsProps> = ({
+  projects,
+}) => {
+  if (!projects.projectTags || projects.projectTags.length === 0) {
+    <></>;
+  }
+
   return (
     <section>
       <div className="container mx-auto border-t border-l border-r border-[#ffffff90]">
@@ -10,19 +21,15 @@ export const SectionProjectTags = () => {
       </div>
 
       <div className="py-16 border-l border-r border-[#ffffff90] container mx-auto pb-32 ">
-        <div className=" grid mx-auto grid-cols-4 gap-2">
-          <div className="border-[#727171] border uppercase tracking-[0.35rem] text-lg py-3 px-3 bg-[#1A1A1A] text-center">
-            Next js
-          </div>
-          <div className="border-[#727171] border uppercase tracking-[0.35rem] text-lg py-3 px-3 bg-[#1A1A1A] text-center">
-            CSS
-          </div>
-          <div className="border-[#727171] border uppercase tracking-[0.35rem] text-lg py-3 px-3 bg-[#1A1A1A] text-center">
-            Ethereum
-          </div>
-          <div className="border-[#727171] border uppercase tracking-[0.35rem] text-lg py-3 px-3 bg-[#1A1A1A] text-center">
-            Spotify API
-          </div>
+        <div className=" grid mx-auto grid-cols-4 gap-2 gap-y-5">
+          {projects.projectTags.map((tag) => (
+            <div
+              className="border-[#727171] border uppercase tracking-[0.35rem] text-lg py-3 px-3 bg-[#1A1A1A] text-center"
+              key={tag}
+            >
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
     </section>

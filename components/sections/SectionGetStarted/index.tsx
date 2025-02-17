@@ -8,7 +8,7 @@ export const SectionGetStarted = () => {
       <h2 className="text-[4rem] uppercase font-[600] mt-6 leading-[1.3]">
         Ready to build <br /> your next project?
       </h2>
-      <button className="button ">
+      <button className="py-1.5 border mt-12 text-lg tracking-[0.3rem] px-4 uppercase">
         <span className="">Get Started</span>
       </button>
     </section>

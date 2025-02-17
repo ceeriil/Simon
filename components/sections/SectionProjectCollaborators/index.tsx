@@ -1,7 +1,18 @@
 import React from "react";
 import { Profile } from "@/components/assets/Profile";
+import { IProject } from "@/data/projects";
 
-export const SectionProjectCollaborators = () => {
+interface ISectionProjectCollaboratorsProps {
+  project: IProject;
+}
+
+export const SectionProjectCollaborators: React.FC<
+  ISectionProjectCollaboratorsProps
+> = ({ project }) => {
+  if (!project.collaborators || project.collaborators.length <= 0) {
+    return <></>;
+  }
+
   return (
     <section>
       <div className="container mx-auto border-t border-l border-r border-[#ffffff90]">
@@ -12,25 +23,20 @@ export const SectionProjectCollaborators = () => {
 
       <div className="py-8 border-l border-r border-[#ffffff90] container mx-auto pb-20">
         <div className=" grid mx-auto gap-2 grid-cols-3">
-          <div className="border-[#727171]  border  text-white py-4 px-3 bg-[#1A1A1A] text-left flex space-x-5 items-center justify-center cursor-pointer">
-            <Profile />
-            <div>
-              <span className="text-lg tracking-[0.25rem]  uppercase ">
-                Daniel
-              </span>
-              <p className="text-sm text-gray-300">Smart Contract Developer</p>
+          {project.collaborators.map((collaborator) => (
+            <div
+              className="border-[#727171]  border  text-white py-4 px-3 bg-[#1A1A1A] text-left flex space-x-5 items-center justify-center cursor-pointer"
+              key={collaborator.name}
+            >
+              <Profile />
+              <div>
+                <span className="text-lg tracking-[0.25rem]  uppercase ">
+                  {collaborator.name}
+                </span>
+                <p className="text-sm text-gray-300">{collaborator.role}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="border-[#727171]  border  text-white py-4 px-3 bg-[#1A1A1A] text-left flex space-x-5 items-center justify-center cursor-pointer">
-            <Profile />
-            <div>
-              <span className="text-lg tracking-[0.25rem]  uppercase ">
-                Crack
-              </span>
-              <p className="text-sm text-gray-300">Smart Contract Developer</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

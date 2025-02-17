@@ -4,7 +4,7 @@ import { socialLinks } from "./socalLinks";
 
 export const SocialBlock = () => {
   return (
-    <ul className="flex space-x-4">
+    <ul className="flex gap-x-4 lg:flex-col">
       {socialLinks.map((social) => (
         <li key={social.name} className="my-4 ">
           <Link href={social.href}>{social.icon}</Link>
